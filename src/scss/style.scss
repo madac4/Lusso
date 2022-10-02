@@ -3,14 +3,16 @@
 // Conectarea MIXINURILOR ==============================================================================================================
 @import 'base/mixin.scss';
 // Conectarea Fonturilor
-// @import 'fonts.scss';
+@import 'fonts.scss';
 // Conectarea Fonturilor pentru Iconite
-// @import 'icons.scss';
+@import 'icons.scss';
 // Main Font =======================================================================================================================
 $fontFamily: '';
 $fontSize: rem(14px); // 14 - marimea textului din maket
 // Culorile de baza ======================================================================================================================
-$maincolor: #000;
+$maincolor: #222222;
+$textgray: #717171;
+$accentcolor: #ff9820;
 // Setarile =================================================================================================================================
 // Marimea minima a ecranului
 $minWidth: 320;
