@@ -1,0 +1,100 @@
+@use 'sass:math';
+@use '../../node_modules/sass-rem' as *;
+// Conectarea MIXINURILOR ==============================================================================================================
+@import 'base/mixin.scss';
+// Conectarea Fonturilor
+// @import 'fonts.scss';
+// Conectarea Fonturilor pentru Iconite
+// @import 'icons.scss';
+// Main Font =======================================================================================================================
+$fontFamily: '';
+$fontSize: rem(14px); // 14 - marimea textului din maket
+// Culorile de baza ======================================================================================================================
+$maincolor: #000;
+// Setarile =================================================================================================================================
+// Marimea minima a ecranului
+$minWidth: 320;
+// Marimea frame-ului din design
+$maxWidth: 1920;
+// Marimea Containerului
+$maxWidthContainer: 1140;
+// Paddingul Containerului(15 din stanga/15 din dreapta)
+$containerPadding: 30;
+// Tipul adaptivului
+// 1 - containerului nu are breakpoints
+// 2 - containerului are breakpoints(isi schimba marimea dupa breakpoint)
+$responsiveType: 1;
+// Marimea cand lucreaza primul breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+// Breakpoints
+$pc: rem($containerWidth + px);
+$tablet: rem(991.98px);
+$mobile: rem(767.98px);
+$mobileMedium: rem(639.98px);
+$mobileSmall: rem(479.98px);
+// Stilurile de baza
+@import 'base/null.scss';
+.wrapper {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    // Impingem footerul jos
+    > main {
+        flex: 1 1 auto;
+    }
+    // Fixarea sliderurilor
+    > * {
+        min-width: 0;
+    }
+}
+
+// Containerul
+
+/* Stilurile vor merge cu toate clasele care contin: __container
+   Exemplu: header__container, main__container, __container */
+
+@if ($responsiveType==1) {
+    [class*='__container'] {
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer + px);
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+        @if ($containerPadding>0) {
+            padding: 0 rem(math.div($containerPadding, 2) + px);
+        }
+    }
+} @else {
+    [class*='__container'] {
+        margin: 0 auto;
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+        } @else {
+            @if ($containerPadding>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+        @media (max-width: $pc) {
+            max-width: rem(970px);
+        }
+        @media (max-width: $tablet) {
+            max-width: rem(750px);
+        }
+        @media (max-width: $mobile) {
+            max-width: none;
+            @if ($containerPadding>0 and $maxWidthContainer>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+    }
+}
+
+// Conectarea stilurilor comune
+@import 'ui';
+// Conectarea stilurilor pentru blocuri aparte
+@import 'components/footer.scss';
+@import 'components/header.scss';
+// Conectarea stilurilor pentru pagini
+@import 'home';

@@ -1,0 +1,50 @@
+{
+    "name": "gulp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "type": "module",
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp deployZIP --build",
+        "deploy": "gulp deployFTP --build",
+        "build": "gulp build --build"
+    },
+    "author": "WHHROO",
+    "license": "ISC",
+    "dependencies": {
+        "gulp-cli": "^2.3.0",
+        "gulp-imagemin": "^8.0.0",
+        "gulp-webp": "^4.0.1"
+    },
+    "devDependencies": {
+        "browser-sync": "latest",
+        "del": "latest",
+        "gulp": "latest",
+        "gulp-autoprefixer": "latest",
+        "gulp-clean-css": "latest",
+        "gulp-file-include": "latest",
+        "gulp-fonter": "latest",
+        "gulp-group-css-media-queries": "latest",
+        "gulp-if": "latest",
+        "gulp-newer": "latest",
+        "gulp-notify": "latest",
+        "gulp-plumber": "latest",
+        "gulp-rename": "latest",
+        "gulp-replace": "latest",
+        "gulp-sass": "latest",
+        "gulp-ttf2woff": "latest",
+        "gulp-ttf2woff2": "latest",
+        "gulp-util": "latest",
+        "gulp-version-number": "latest",
+        "gulp-webp-html-nosvg": "latest",
+        "gulp-webpcss": "latest",
+        "gulp-zip": "latest",
+        "sass": "latest",
+        "sass-rem": "latest",
+        "vinyl-ftp": "latest",
+        "webp-converter": "2.2.3",
+        "webpack": "latest",
+        "webpack-stream": "latest"
+    }
+}
