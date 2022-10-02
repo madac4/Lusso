@@ -7,19 +7,20 @@
 // Conectarea Fonturilor pentru Iconite
 @import 'icons.scss';
 // Main Font =======================================================================================================================
-$fontFamily: '';
-$fontSize: rem(14px); // 14 - marimea textului din maket
+$fontFamily: 'SourceSansPro';
+$fontSize: rem(16px); // 14 - marimea textului din maket
 // Culorile de baza ======================================================================================================================
 $maincolor: #222222;
 $textgray: #717171;
 $accentcolor: #ff9820;
+$border: 1px solid rgba(0, 0, 0, 0.1);
 // Setarile =================================================================================================================================
 // Marimea minima a ecranului
 $minWidth: 320;
 // Marimea frame-ului din design
 $maxWidth: 1920;
 // Marimea Containerului
-$maxWidthContainer: 1140;
+$maxWidthContainer: 1300;
 // Paddingul Containerului(15 din stanga/15 din dreapta)
 $containerPadding: 30;
 // Tipul adaptivului
@@ -100,3 +101,4 @@ $mobileSmall: rem(479.98px);
 @import 'components/header.scss';
 // Conectarea stilurilor pentru pagini
 @import 'home';
+@import 'catalog';

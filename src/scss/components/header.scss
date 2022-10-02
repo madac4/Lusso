@@ -1,20 +1,111 @@
 .header {
-    // &.sticky {
-    //     position: fixed;
-    //     width: 100%;
-    //     left: 0;
-    //     top: 0;
-    //     right: 0;
-    //     animation: fixedHeader 0.4s;
-    //     z-index: 5;
-    // }
+    @include adaptiv-value('padding-top', 30, 15, 1);
+    @include adaptiv-value('padding-bottom', 30, 15, 1);
+    border-bottom: $border;
+    background-color: #fff;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        img {
+            @include adaptiv-value('max-width', 127, 80, 1);
+            height: auto;
+        }
+    }
+    &__nav {
+        @media (max-width: $mobile) {
+            position: fixed;
+            width: 80%;
+            height: 100%;
+            background-color: #fff;
+            right: -80%;
+            transition: 0.3s;
+            padding-top: 40px;
+            padding-left: 40px;
+            &.active {
+                right: 0;
+            }
+        }
+        .header-contacts__socials {
+            display: none;
+            @media (max-width: $mobile) {
+                display: flex;
+                margin-top: 30px;
+            }
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            @include adaptiv-value('gap', 60, 20, 1);
+            @media (max-width: $mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 18px;
+            }
+            li {
+                &.active {
+                    a {
+                        font-weight: 600;
+                    }
+                }
+                a {
+                    transition: 0.3s;
+                    &:hover {
+                        color: $accentcolor;
+                    }
+                }
+            }
+        }
+    }
+    &-contacts {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 50, 20, 1);
+        &__phone {
+            font-weight: 600;
+            transition: 0.3s;
+            &:hover {
+                color: $accentcolor;
+            }
+        }
+        &__socials {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @media (max-width: $mobile) {
+                display: none;
+            }
+            a {
+                display: block;
+                transition: 0.3s;
+                &:hover {
+                    transform: translateY(-3px);
+                }
+                span {
+                    font-size: 24px;
+                    display: block;
+                }
+            }
+        }
+    }
+    &.sticky {
+        position: sticky;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        animation: fixedHeader 0.4s;
+        z-index: 5;
+    }
 }
 
-// @keyframes fixedHeader {
-//     from {
-//         transform: translateY(-50px);
-//     }
-//     to {
-//         transform: translateY(0);
-//     }
-// }
+@keyframes fixedHeader {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

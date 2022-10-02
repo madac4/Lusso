@@ -5,15 +5,34 @@ h2 {
 h3 {
 }
 h4 {
+    font-weight: 600;
+    @include adaptiv-value('font-size', 24, 18, 1);
+    line-height: 150%;
 }
 h5 {
 }
 h6 {
+    font-size: 16px;
 }
 p {
+    line-height: 150%;
 }
 
 .button {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    transition: 0.3s;
+    &__dark {
+        padding: 15px 30px;
+        background-color: $maincolor;
+        border-radius: 30px;
+        color: #fff;
+        width: fit-content;
+        &:hover {
+            background-color: $accentcolor;
+        }
+    }
 }
 
 .burger {
@@ -185,5 +204,27 @@ p {
     display: none;
     &--active {
         display: block;
+    }
+}
+
+.product {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    img {
+        width: 100%;
+        max-height: 280px;
+        object-fit: cover;
+    }
+    &:hover {
+        border: $border;
+    }
+    p {
+        color: $textgray;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @include adaptiv-value('margin-top', 20, 10, 1);
+        @include adaptiv-value('margin-bottom', 10, 5, 1);
     }
 }

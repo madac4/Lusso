@@ -1,0 +1,32 @@
+.page-introduction {
+    display: flex;
+    @include adaptiv-value('margin-bottom', 80, 40, 1);
+    img {
+        width: 50%;
+        @media (max-width: $mobile) {
+            width: 100%;
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+.catalog {
+    &__sidebar {
+    }
+    &__body {
+        @include adaptiv-value('margin-bottom', 50, 30, 1);
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        @media (max-width: $mobile) {
+            grid-gap: 30px 15px;
+        }
+        grid-gap: 70px 30px;
+    }
+}
