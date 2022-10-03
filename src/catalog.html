@@ -3,7 +3,7 @@
     @@include('./components/head.html', {'title': 'Catalog'})
 
     <body>
-        @@include('./components/header.html')
+        @@include('./components/header.html') @@include('./components/checkbox.html')
         <main>
             <div class="page-introduction">
                 <img src="@img/catalog1.jpg" alt="" />
@@ -11,8 +11,97 @@
             </div>
 
             <div class="catalog">
-                <aside class="catalog__sidebar"></aside>
+                <aside class="catalog__sidebar catalog-sidebar">
+                    <div class="catalog-sidebar__filters filters-simple">
+                        <h6>Все</h6>
+
+                        <button>Тарелки</button>
+                        <button>Вазы</button>
+                        <button>Лампы</button>
+                        <button>Filtru 1</button>
+                        <button>Filtru 2</button>
+                    </div>
+
+                    <div class="catalog-sidebar__filters filters-checkbox">
+                        <h6>Бренд</h6>
+
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" type="checkbox" />
+                            <span class="checkbox">
+                                <span>
+                                    <svg width="12px" height="10px">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                </span>
+                                <span>omnis iusto quasi</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" type="checkbox" />
+                            <span class="checkbox">
+                                <span>
+                                    <svg width="12px" height="10px">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                </span>
+                                <span>omnis iusto quasi</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" type="checkbox" />
+                            <span class="checkbox">
+                                <span>
+                                    <svg width="12px" height="10px">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                </span>
+                                <span>omnis iusto quasi</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" type="checkbox" />
+                            <span class="checkbox">
+                                <span>
+                                    <svg width="12px" height="10px">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                </span>
+                                <span>omnis iusto quasi</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="catalog-sidebar__filters filters-checkbox">
+                        <h6>В наличии</h6>
+
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" type="checkbox" />
+                            <span class="checkbox">
+                                <span>
+                                    <svg width="12px" height="10px">
+                                        <use xlink:href="#check"></use>
+                                    </svg>
+                                </span>
+                                <span>Только товары в наличии</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="catalog-sidebar__filters filters-simple">
+                        <h6>Материал</h6>
+
+                        <button>Керамика</button>
+                        <button>Металл</button>
+                        <button>Стекло</button>
+                        <button>Хрусталь</button>
+                        <button>Дерево</button>
+                    </div>
+
+                    <button class="icon-close close-filter"></button>
+                </aside>
                 <div class="catalog__container">
+                    <button class="button button__dark open-filter">Фильтры</button>
+
                     <div class="catalog__body catalog-body catalog-grid">
                         <article class="catalog-body__item product">
                             <img src="@img/product1.jpg" alt="" />

@@ -1,4 +1,4 @@
-import * as flsFunctions from './modules/functions.js'
+import * as flsFunctions from './modules/functions.js';
 
 flsFunctions.isWebp();
 
@@ -7,13 +7,23 @@ const burger = document.querySelector('.burger');
 const menu = document.querySelector('.header__nav');
 
 if (burger && menu) {
-    flsFunctions.burger(burger, menu, header)
+    flsFunctions.burger(burger, menu, header);
 }
 if (header) {
-    flsFunctions.fixedHeader(header)
+    flsFunctions.fixedHeader(header);
 }
 
-
+const filtersToggler = document.querySelector('.open-filter');
+const filtersCloser = document.querySelector('.close-filter');
+const filtersSidebar = document.querySelector('.catalog-sidebar');
+filtersToggler.addEventListener('click', () => {
+    filtersSidebar.classList.toggle('open');
+    document.body.classList.toggle('lock');
+});
+filtersCloser.addEventListener('click', () => {
+    filtersSidebar.classList.remove('open');
+    document.body.classList.remove('lock');
+});
 // let sliderTemplate = new Swiper('.slider', {
 //     effect: 'fade',
 //     autoplay:{
