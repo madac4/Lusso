@@ -42,6 +42,7 @@ $mobileSmall: rem(479.98px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    min-height: 100vh;
     // Impingem footerul jos
     > main {
         flex: 1 1 auto;

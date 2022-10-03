@@ -203,6 +203,7 @@ textarea {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-height: 100vh;
 }
 .wrapper > main {
   flex: 1 1 auto;
@@ -885,7 +886,7 @@ p {
 @media (max-width: 1300px) {
   .catalog-sidebar {
     padding-left: calc(
-                0px + 50 * ((100vw - 320px) / 980)
+                20px + 30 * ((100vw - 320px) / 980)
             );
   }
 }
@@ -937,6 +938,7 @@ p {
   font-weight: 300;
   display: block;
   transition: 0.3s;
+  color: #222222;
 }
 .catalog-sidebar__filters button:not(:last-child) {
   margin-bottom: 20px;

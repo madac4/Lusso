@@ -20,7 +20,7 @@
         grid-template-columns: 1fr;
     }
     &-sidebar {
-        @include adaptiv-value('padding-left', 50, 0, 1);
+        @include adaptiv-value('padding-left', 50, 20, 1);
         button.icon-close {
             position: absolute;
             top: 30px;
@@ -60,6 +60,7 @@
                 font-weight: 300;
                 display: block;
                 transition: 0.3s;
+                color: $maincolor;
                 &:not(:last-child) {
                     @include adaptiv-value('margin-bottom', 20, 10, 1);
                 }
