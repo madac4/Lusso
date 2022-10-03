@@ -1,6 +1,7 @@
 import * as flsFunctions from './modules/functions.js';
 
 flsFunctions.isWebp();
+flsFunctions.sliders();
 
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
@@ -79,3 +80,40 @@ if (filtersSidebar) {
 //         el: '.swiper-scrollbar',
 //     }
 // })
+
+const productSlider = document.querySelectorAll('.slider-product__body');
+
+if (productSlider.length >= 1) {
+    for (let i = 0; i < productSlider.length; i++) {
+        productSlider[i].classList.add(`slider-product__body--${i}`);
+        productSlider[i].parentNode
+            .querySelector('.slider-product-controls__arrows')
+            .classList.add(`slider-product-${i}-controls__arrows`);
+
+        const thumbs = new Swiper(`.slider-thumb__body`, {
+            spaceBetween: 10,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        new Swiper(`.slider-product__body--${i}`, {
+            grabCursor: true,
+            observer: true,
+            observeParents: true,
+            autoHeight: true,
+            slidesPerGroup: 1,
+            speed: 800,
+            spaceBetween: 20,
+            preloadImages: false,
+            lazy: true,
+            navigation: {
+                prevEl: `.slider-product-${i}-controls__arrows .slider-arrow__prev`,
+                nextEl: `.slider-product-${i}-controls__arrows .slider-arrow__next`,
+            },
+            thumbs: {
+                swiper: thumbs,
+            },
+        });
+    }
+}
