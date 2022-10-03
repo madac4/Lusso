@@ -880,6 +880,10 @@ p {
   z-index: 5;
   max-width: 1200px;
   width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: opacity 0.3s visibility 0.3s transform 0.3s;
 }
 @media (max-width: 1300px) {
   .product-modal {
@@ -887,6 +891,11 @@ p {
                 20px + 60 * ((100vw - 320px) / 980)
             );
   }
+}
+.product-modal.open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 @media (max-width: 47.99875rem) {
   .product-modal {
