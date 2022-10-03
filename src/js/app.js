@@ -16,14 +16,16 @@ if (header) {
 const filtersToggler = document.querySelector('.open-filter');
 const filtersCloser = document.querySelector('.close-filter');
 const filtersSidebar = document.querySelector('.catalog-sidebar');
-filtersToggler.addEventListener('click', () => {
-    filtersSidebar.classList.toggle('open');
-    document.body.classList.toggle('lock');
-});
-filtersCloser.addEventListener('click', () => {
-    filtersSidebar.classList.remove('open');
-    document.body.classList.remove('lock');
-});
+if (filtersSidebar) {
+    filtersToggler.addEventListener('click', () => {
+        filtersSidebar.classList.toggle('open');
+        document.body.classList.toggle('lock');
+    });
+    filtersCloser.addEventListener('click', () => {
+        filtersSidebar.classList.remove('open');
+        document.body.classList.remove('lock');
+    });
+}
 // let sliderTemplate = new Swiper('.slider', {
 //     effect: 'fade',
 //     autoplay:{

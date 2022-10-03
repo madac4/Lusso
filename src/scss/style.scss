@@ -5,7 +5,6 @@
 // Conectarea Fonturilor
 @import 'fonts.scss';
 // Conectarea Fonturilor pentru Iconite
-@import 'icons.scss';
 // Main Font =======================================================================================================================
 $fontFamily: 'SourceSansPro';
 $fontSize: rem(16px); // 14 - marimea textului din maket
@@ -14,6 +13,7 @@ $maincolor: #222222;
 $textgray: #717171;
 $accentcolor: #ff9820;
 $border: 1px solid rgba(0, 0, 0, 0.1);
+@import 'icons.scss';
 // Setarile =================================================================================================================================
 // Marimea minima a ecranului
 $minWidth: 320;

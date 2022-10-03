@@ -58,6 +58,7 @@
 [class^=icon-],
 [class*=" icon-"] {
   font-family: "icomoon" !important;
+  color: #222222;
   font-style: normal;
   font-size: 16px;
   font-weight: normal;
@@ -576,7 +577,7 @@ p {
 .checkbox span:first-child svg {
   position: absolute;
   top: 2px;
-  left: 1px;
+  left: 1.5px;
   fill: none;
   stroke: #fff;
   stroke-dasharray: 16px;
