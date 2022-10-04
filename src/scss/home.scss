@@ -1,0 +1,258 @@
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    h1 {
+        margin-bottom: 10px;
+    }
+    h2 {
+        @include adaptiv-value('font-size', 40, 32, 1);
+        font-size: 40px;
+        line-height: 50px;
+        @include adaptiv-value('line-height', 50, 30, 1);
+        color: #FFFFFF;
+        @include adaptiv-value('margin-bottom', 50, 30, 1);
+    }
+    a {
+        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 18, 1);
+        line-height: 28px;
+        @include adaptiv-value('line-height', 28, 20, 1);
+        color: #FFFFFF;
+        &:first-of-type {
+            margin-bottom: 10px;
+        }
+    }
+    .go-bottom {
+        position: absolute;
+        bottom: 50px;
+        &:hover {
+            animation: go-bottom 0.6s ease;
+        }
+        span {
+            color: #FFFFFF;
+            font-size: 40px;
+        }
+    }
+}
+
+.products {
+    &__concept {
+        max-width: 980px;
+        margin: 150px auto;
+        font-weight: 300;
+        font-size: 36px;
+        @include adaptiv-value('font-size', 36, 22, 1);
+        line-height: 150%;
+        text-align: center;
+        color: #717171;
+        @media (max-width: $mobile) {
+            margin: 70px auto;
+        }
+    }
+    &__button {
+        @include adaptiv-value('margin-top', 85, 30, 1);
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        @media (max-width: $mobile) {
+            grid-gap: 30px 15px;
+        }
+        grid-gap: 70px 30px;
+    }
+}
+
+.about {
+    @include adaptiv-value('margin-top', 150, 70, 1);
+    @include adaptiv-value('margin-bottom', 150, 70, 1);
+    @media (max-width: $mobileMedium) {
+        padding: 0 15px;
+    }
+    &__body {
+        display: flex;
+        @media (max-width: $tablet) {
+            margin: 0 auto;
+            max-width: 80%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        @media (max-width: $mobileMedium) {
+            max-width: 100%;
+        }
+        img {
+            width: 50%;
+            @media (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+    }
+    &-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background-color: #FAF9F5;
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+        &__body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            @media (max-width: $tablet) {}
+            max-width: 685px;
+            padding: 30px;
+            h2 {
+                margin-bottom: 30px;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+            a {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.proud {
+    @include adaptiv-value('margin-bottom', 150, 70, 1);
+    h2 {
+        text-align: center;
+        @include adaptiv-value('margin-bottom', 100, 50, 1);
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px 20px;
+        }
+    }
+    &__item {
+        max-width: 300px;
+        text-align: center;
+        @media (max-width: $mobileMedium) {
+            max-width: 100%;
+            width: 100%;
+            border: $border;
+            padding: 30px;
+        }
+        &:hover {
+            img {
+                transform: translateY(-10px);
+            }
+        }
+        img {
+            display: inline;
+            max-width: 60px;
+            margin-bottom: 30px;
+            transition: .3s;
+        }
+        h4 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.instagram {
+    background-color: #FAF9F5;
+    @include adaptiv-value('padding-top', 100, 50, 1);
+    @include adaptiv-value('padding-bottom', 100, 50, 1);
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        grid-template-rows: repeat(2, 1fr);
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+        }
+        img {
+            width: 100%;
+            &:first-child {
+                grid-column: 2 span;
+                grid-row: 2 span;
+            }
+            @media (max-width: $mobile) {
+                grid-column: 1 span;
+                grid-row: 1 span;
+            }
+        }
+    }
+    &__big {
+        width: min(630px, 100%);
+    }
+}
+
+.contact {
+    @include adaptiv-value('margin-top', 150, 70, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    h2,
+    h4 {
+        margin-bottom: 30px;
+    }
+    img {
+        width: min(200px, 100%);
+    }
+    p {
+        display: block;
+        font-weight: 600;
+        color: #000000;
+        a {
+            font-weight: 400;
+        }
+    }
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+            transition: .3s;
+            &:hover {
+                transform: translateY(-3px);
+            }
+            &:not(:last-child) {
+                padding-right: 10px;
+            }
+            span {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@keyframes go-bottom {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}

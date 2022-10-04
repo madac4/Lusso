@@ -28,7 +28,7 @@ $containerPadding: 30;
 // 2 - containerului are breakpoints(isi schimba marimea dupa breakpoint)
 $responsiveType: 1;
 // Marimea cand lucreaza primul breakpoint
-$containerWidth: $maxWidthContainer + $containerPadding;
+$containerWidth: $maxWidthContainer+$containerPadding;
 // Breakpoints
 $pc: rem($containerWidth + px);
 $tablet: rem(991.98px);
@@ -44,11 +44,11 @@ $mobileSmall: rem(479.98px);
     overflow: hidden;
     min-height: 100vh;
     // Impingem footerul jos
-    > main {
+    >main {
         flex: 1 1 auto;
     }
     // Fixarea sliderurilor
-    > * {
+    >* {
         min-width: 0;
     }
 }
@@ -69,13 +69,16 @@ $mobileSmall: rem(479.98px);
             padding: 0 rem(math.div($containerPadding, 2) + px);
         }
     }
-} @else {
+}
+
+@else {
     [class*='__container'] {
         margin: 0 auto;
         @if ($maxWidthContainer>0) {
             max-width: rem($maxWidthContainer);
             box-sizing: content-box;
-        } @else {
+        }
+        @else {
             @if ($containerPadding>0) {
                 padding: 0 rem(math.div($containerPadding, 2));
             }
@@ -104,3 +107,4 @@ $mobileSmall: rem(479.98px);
 // Conectarea stilurilor pentru pagini
 @import 'home';
 @import 'catalog';
+@import 'about';
