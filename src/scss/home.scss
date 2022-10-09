@@ -41,17 +41,16 @@
 
 .products {
     &__concept {
+        @include adaptiv-value('padding-top', 150, 100, 1);
+        @include adaptiv-value('padding-bottom', 150, 50, 1);
         max-width: 980px;
-        margin: 150px auto;
+        margin: 0 auto;
         font-weight: 300;
         font-size: 36px;
         @include adaptiv-value('font-size', 36, 22, 1);
         line-height: 150%;
         text-align: center;
-        color: #717171;
-        @media (max-width: $mobile) {
-            margin: 70px auto;
-        }
+        color: $textgray;
     }
     &__button {
         @include adaptiv-value('margin-top', 85, 30, 1);

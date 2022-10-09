@@ -27,7 +27,6 @@ export function burger(burger, menu, header) {
 
 export function fixedHeader(header) {
     const main = document.querySelector('main');
-    console.log(header.offsetHeight)
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY;
         if (scrollPos > header.offsetHeight + 30) {

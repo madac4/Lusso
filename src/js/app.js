@@ -3,9 +3,11 @@ import * as flsFunctions from './modules/functions.js';
 flsFunctions.isWebp();
 flsFunctions.sliders();
 
+
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.header__nav');
+
 
 if (burger && menu) {
     flsFunctions.burger(burger, menu, header);
@@ -27,18 +29,25 @@ if (filtersSidebar) {
         document.body.classList.remove('lock');
     });
 }
-
 const hero = document.querySelector('.hero')
 const goBottom = document.querySelector('.go-bottom')
 const goBottomSection = document.querySelector('.go-button__section')
+
+console.log();
+
+if (flsFunctions.isMobile.iOS()) {
+    hero.classList.add('ios')
+}
 
 if (hero) {
     header.classList.add('hidden')
     const heroHeight = hero.offsetHeight
     const main = document.querySelector('main');
+
     window.addEventListener('scroll', () => {
         main.style.marginTop = null;
         const scrollPos = window.scrollY
+
         if (scrollPos >= heroHeight) {
             header.classList.remove('hidden')
         } else {
@@ -47,12 +56,18 @@ if (hero) {
     })
     goBottom.addEventListener('click', () => {
         const pos = goBottomSection.offsetTop
+        if (flsFunctions.isMobile.iOS()) {
+            pos + 100
+        }
         window.scrollTo({
-            top: pos - 150,
+            top: pos,
             behavior: 'smooth',
         })
     })
+    
 }
+
+
 
 // let sliderTemplate = new Swiper('.slider', {
 //     effect: 'fade',
